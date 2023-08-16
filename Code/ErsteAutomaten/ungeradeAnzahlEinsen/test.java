@@ -17,6 +17,7 @@ public class test extends Frame {
     Automat automat = new Automat();
     Automat.tEingabe eingabe;
     Automat.tAusgabe ausgabe;
+    Automat.tZustand zustandNeu;
     int i = -1; //für Position des einzulesenden Zeichen
 
     // Ende Attribute
@@ -73,6 +74,7 @@ public class test extends Frame {
 
     // Anfang Methoden
     public String GibAus(Automat.tAusgabe ausgabe) {
+        //Konvertierung - Automaten-Ausgabe zu String
         String s = "";
         switch (ausgabe) {
             case  aGerade:
@@ -86,6 +88,7 @@ public class test extends Frame {
     }
 
     public Automat.tEingabe LiesEingabe(char zeichen) {
+        //Konvertierung - Character zu Automaten-Eingabe
         switch (zeichen) {
             case '0':
                 eingabe = Automat.tEingabe.e0;
@@ -110,14 +113,15 @@ public class test extends Frame {
             eingabe = LiesEingabe(c);
             ausgabe = automat.ausgabefunktion(eingabe, automat.getZustand());
             textField3.setText(GibAus(ausgabe));
-            automat.uebergangsfunktion(eingabe, automat.getZustand());
+            zustandNeu = automat.uebergangsfunktion(eingabe, automat.getZustand());
+            automat.setZustand(zustandNeu);
             textField2.setText("" + automat.getZustand());
             textField2.setBounds(textField2.getX()+5,
                     textField2.getY(), textField2.getWidth(),
                     textField2.getHeight());
             if (i == t-1) {
                 button1.setLabel("Ende!");
-            } // end of if
+            }
         }
     }
     // Ende Methoden
