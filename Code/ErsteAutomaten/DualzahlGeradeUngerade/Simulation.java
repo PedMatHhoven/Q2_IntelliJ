@@ -1,9 +1,9 @@
-package ErsteAutomaten.ungeradeAnzahlEinsen;
+package ErsteAutomaten.DualzahlGeradeUngerade;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class test extends Frame {
+public class Simulation extends Frame {
     // Anfang Attribute
     private Label label1 = new Label();
     private Label label2 = new Label();
@@ -22,7 +22,7 @@ public class test extends Frame {
 
     // Ende Attribute
 
-    public test(String title) {
+    public Simulation(String title) {
         // Frame-Initialisierung
         super(title);
         addWindowListener(new WindowAdapter() {
@@ -101,7 +101,7 @@ public class test extends Frame {
     }
 
     public static void main(String[] args) {
-        new test("test");
+        new Simulation("test");
     } // end of main
 
     public void button1_ActionPerformed(ActionEvent evt) {

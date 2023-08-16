@@ -15,8 +15,12 @@ public class Automat {
   public tZustand getZustand() {
     return zustand;
   }
-  
-  public void uebergangsfunktion(tEingabe ein, tZustand zu) {
+
+  public void setZustand(tZustand z) {
+    zustand = z;
+  }
+
+  tZustand uebergangsfunktion(tEingabe ein, tZustand zu) {
     switch (zu) {
       case z0: 
       switch (ein) {
@@ -61,6 +65,7 @@ public class Automat {
       }
       break;
     }
+    return zustand;
   }
   
   public tAusgabe ausgabefunktion(tEingabe ein, tZustand zu) {

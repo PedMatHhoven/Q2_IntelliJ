@@ -1,4 +1,4 @@
-package ErsteAutomaten.ungeradeAnzahlEinsen;
+package ErsteAutomaten.DualzahlGeradeUngerade;
 
 public class Automat {
   //Definitionen von Alphabeten und Zustandsmenge

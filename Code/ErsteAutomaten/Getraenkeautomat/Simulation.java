@@ -3,9 +3,8 @@ package ErsteAutomaten.Getraenkeautomat;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
-public class Getraenkeautomat extends Frame {
+public class Simulation extends Frame {
   // Anfang Attribute
   private Label label1 = new Label();
   private Label label2 = new Label();
@@ -22,10 +21,11 @@ public class Getraenkeautomat extends Frame {
   Automat automat = new Automat();
   Automat.tEingabe eingabe;
   Automat.tAusgabe ausgabe;
+  Automat.tZustand zustandNeu;
   int i = -1; //Position des einzulesenden Zeichens
   // Ende Attribute
   
-  public Getraenkeautomat(String title) {
+  public Simulation(String title) {
     // Frame-Initialisierung
     super(title);
     addWindowListener(new WindowAdapter() {
@@ -68,7 +68,7 @@ public class Getraenkeautomat extends Frame {
     });
     cp.add(button1);
     textArea1.setBounds(96, 16, 160, 116);
-    textArea1.setText("m�gliche Eingabezeichen \n+ zugeh�rige Aktionen:\n\n'1' - 1� rein\n'5' - 50 cent rein\n'W' - Ware anfordern\n'A' - Abbruch\n");
+    textArea1.setText("mögliche Eingabezeichen \n+ zugehörige Aktionen:\n\n'1' - 1€ rein\n'5' - 50 cent rein\n'W' - Ware anfordern\n'A' - Abbruch\n");
     textArea1.setEnabled(false);
     cp.add(textArea1);
     jLabel1.setBounds(-16, 16, 106, 122);
@@ -81,9 +81,25 @@ public class Getraenkeautomat extends Frame {
   }
   
   // Anfang Methoden
-  
-  //Automat-Methoden
-  
+  public String GibAus(Automat.tAusgabe ausgabe) {
+    String s = "";
+    switch (ausgabe) {
+      case a1:
+        s = "1 Euro zurück!";
+        break;
+      case a50:
+        s = "50 cent zurück!";
+        break;
+      case aWare:
+        s = "Ihr Getränk!";
+        break;
+      case aNichts:
+        s = "Nichts!";
+        break;
+    }
+    return s;
+  }
+
   public Automat.tEingabe LiesEingabe(char zeichen) {
     switch (zeichen) {
       case '1': 
@@ -102,40 +118,28 @@ public class Getraenkeautomat extends Frame {
     return eingabe;
   }
   
-  public String GibAus(Automat.tAusgabe ausgabe) {
-    String s = "";
-    switch (ausgabe) {
-      case a1: 
-      s = "1 Euro zurück!";
-      break;
-      case a50: 
-      s = "50 cent zurück!";
-      break;
-      case aWare:  
-      s = "Ihr Getränk!";
-      break;
-      case aNichts: 
-      s = "Nichts!";
-      break;
-    }
-    return s;
-  }
-  
   public void button1_ActionPerformed(ActionEvent evt) {
     i = i+1;
-    char c = textField1.getText().charAt(i);
-    eingabe = LiesEingabe(c);
-    ausgabe = automat.ausgabefunktion(eingabe, automat.getZustand());
-    textField3.setText(GibAus(ausgabe));
-    automat.uebergangsfunktion(eingabe, automat.getZustand());
-    textField2.setText("" + automat.getZustand());
-    textField2.setBounds(textField2.getX()+5,textField2.getY(),
-    textField2.getWidth(),textField2.getHeight());
+    int t = textField1.getText().length();
+    if (i < t) {
+      char c = textField1.getText().charAt(i);
+      eingabe = LiesEingabe(c);
+      ausgabe = automat.ausgabefunktion(eingabe, automat.getZustand());
+      textField3.setText(GibAus(ausgabe));
+      zustandNeu = automat.uebergangsfunktion(eingabe, automat.getZustand());
+      automat.setZustand(zustandNeu);
+      textField2.setText("" + automat.getZustand());
+      textField2.setBounds(textField2.getX() + 5, textField2.getY(),
+              textField2.getWidth(), textField2.getHeight());
+      if (i == t-1) {
+        button1.setLabel("Ende!");
+      }
+    }
   }
   
   // Ende Methoden
   
   public static void main(String[] args) {
-    new Getraenkeautomat("Getränkeautomat");
+    new Simulation("Getränkeautomat");
   }
 }
