@@ -1,4 +1,4 @@
-package ErsteAutomaten.DualzahlGeradeUngerade;
+package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade.mitAlterGUI;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -102,7 +102,7 @@ public class Simulation extends Frame {
 
     public static void main(String[] args) {
         new Simulation("test");
-    } // end of main
+    }
 
     public void button1_ActionPerformed(ActionEvent evt) {
         //Arbeit(sweise) des Automaten

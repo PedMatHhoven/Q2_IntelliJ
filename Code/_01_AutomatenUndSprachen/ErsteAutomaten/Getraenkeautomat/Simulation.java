@@ -1,4 +1,4 @@
-package ErsteAutomaten.Getraenkeautomat;
+package _01_AutomatenUndSprachen.ErsteAutomaten.Getraenkeautomat;
 
 import java.awt.*;
 import java.awt.event.*;

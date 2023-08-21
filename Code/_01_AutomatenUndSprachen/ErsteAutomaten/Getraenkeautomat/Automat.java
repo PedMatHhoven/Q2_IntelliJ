@@ -1,4 +1,4 @@
-package ErsteAutomaten.Getraenkeautomat;
+package _01_AutomatenUndSprachen.ErsteAutomaten.Getraenkeautomat;
 
 public class Automat {
   //Definitionen von Alphabeten und Zustandsmenge

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="242.0" prefWidth="267.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade.mitJavaFX.Controller">
+   <children>
+      <Button fx:id="btAction" layoutX="137.0" layoutY="197.0" mnemonicParsing="false" onAction="#btAction_onClick" text="action" />
+      <Label fx:id="lb1" layoutX="55.0" layoutY="35.0" text="GERADE oder UNGERADE!?" />
+      <Label fx:id="lbEingabe" layoutX="29.0" layoutY="80.0" text="Eingabe" />
+      <Label fx:id="lbZustand" layoutX="29.0" layoutY="122.0" text="Zustand" />
+      <Label fx:id="lbAusgabe" layoutX="32.0" layoutY="159.0" text="Ausgabe" />
+      <TextField fx:id="tfEingabe" layoutX="84.0" layoutY="76.0" text="Dualzahl" AnchorPane.bottomAnchor="141.0" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="76.0" />
+      <TextField fx:id="tfZustand" layoutX="80.0" layoutY="118.0" prefHeight="25.0" prefWidth="29.0" text="z0" />
+      <TextField fx:id="tfAusgabe" layoutX="87.0" layoutY="155.0" />
+   </children>
+</AnchorPane>
