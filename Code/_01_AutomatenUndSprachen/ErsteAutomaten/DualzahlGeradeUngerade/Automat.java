@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade.mitJavaFX;
+package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade;
 
 public class Automat {
   //Definitionen von Alphabeten und Zustandsmenge
