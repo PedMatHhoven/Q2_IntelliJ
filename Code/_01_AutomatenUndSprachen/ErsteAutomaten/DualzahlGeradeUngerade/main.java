@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade.mitJavaFX;
+package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade.mitJavaFX;
+package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
