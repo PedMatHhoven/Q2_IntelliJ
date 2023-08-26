@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.Getraenkeautomat;
+package _01_AutomatenUndSprachen.ErsteAutomaten.Getraenkeautomat_ohneJavaFX;
 
 public class Automat {
   //Definitionen von Alphabeten und Zustandsmenge
