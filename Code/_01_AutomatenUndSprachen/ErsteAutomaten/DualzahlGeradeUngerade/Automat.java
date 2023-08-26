@@ -21,33 +21,34 @@ public class Automat {
   }
 
   public tZustand uebergangsfunktion(tEingabe ein, tZustand zu) {
+    tZustand zus = null;
     switch (zu) {
       case z0: 
       switch (ein) {
         case  e1: 
-        zustand = tZustand.z0;
+        zus = tZustand.z0;
         break;
         case  e0: 
-        zustand = tZustand.z1;
+        zus = tZustand.z1;
         break;
       }
       break;
       case z1: 
       switch (ein) {
         case  e1: 
-        zustand = tZustand.z0;
+        zus = tZustand.z0;
         break;
         case  e0: 
-        zustand = tZustand.z1;
+        zus = tZustand.z1;
         break;
       }  
       break;
     }
-    return zustand;
+    return zus;
   }  
   
   public tAusgabe ausgabefunktion(tEingabe ein, tZustand zu) {
-    tAusgabe ausgabe = tAusgabe.aGerade;
+    tAusgabe ausgabe = null;
     switch (zu) {
       case z0: 
       switch (ein) {

@@ -20,19 +20,20 @@ public class Automat {
     zustand = z;
   }
 
-  tZustand uebergangsfunktion(tEingabe ein, tZustand zu) {
+  public tZustand uebergangsfunktion(tEingabe ein, tZustand zu) {
+    tZustand zus = null;
     switch (zu) {
       case z0: 
       switch (ein) {
         case e1: 
-        zustand = tZustand.z1;
+        zus = tZustand.z1;
         break;
         case e50: 
-        zustand = tZustand.z2;
+        zus = tZustand.z2;
         break;
         case eWare: 
         case eAbbruch: 
-        zustand = tZustand.z0;
+        zus = tZustand.z0;
         break;
       }
       break;
@@ -40,36 +41,36 @@ public class Automat {
       switch (ein) {
         case e1: 
         case e50: 
-        zustand = tZustand.z1;
+        zus = tZustand.z1;
         break;
         case eWare: 
         case eAbbruch: 
-        zustand = tZustand.z0;
+        zus = tZustand.z0;
         break;
       }
       break;
       case z2: 
       switch (ein) {
         case e1: 
-        zustand = tZustand.z2;
+        zus = tZustand.z2;
         break;
         case e50: 
-        zustand = tZustand.z1;
+        zus = tZustand.z1;
         break;
         case eWare:
-        zustand = tZustand.z2; 
+        zus = tZustand.z2;
         break;
         case eAbbruch: 
-        zustand = tZustand.z0;
+        zus = tZustand.z0;
         break;
       }
       break;
     }
-    return zustand;
+    return zus;
   }
   
   public tAusgabe ausgabefunktion(tEingabe ein, tZustand zu) {
-    tAusgabe ausgabe = tAusgabe.aNichts;
+    tAusgabe ausgabe = null;
     switch (zu) {
       case z0: 
       ausgabe = tAusgabe.aNichts;
