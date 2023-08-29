@@ -63,7 +63,7 @@ public class Automat {
                     case eMehrweg:
                         ausgabe = tAusgabe.aXplus15;
                         break;
-                }
+                } break;
             case z1:
                 switch (ein) {
                     case eAuszahlen:
@@ -83,7 +83,6 @@ public class Automat {
                         break;
                 }
                 break;
-        }
-        return ausgabe;
+        } return ausgabe;
     }
 }

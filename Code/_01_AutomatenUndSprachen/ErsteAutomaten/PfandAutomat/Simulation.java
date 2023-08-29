@@ -11,11 +11,11 @@ public class Simulation {
     Automat.tEingabe eingabe;
     Automat.tAusgabe ausgabe;
     Automat.tZustand zustandNeu;
-    public int x=0;
+    public int x=0; //weiterer Speicher
 
-    public String GibAus(Automat.tAusgabe ausgabe) {
+    public String GibAus(Automat.tAusgabe aus) {
         String s = "";
-        switch (ausgabe) {
+        switch (aus) {
             case aXplus25:
                 s = "25 cent mehr";
                 x+=25;
@@ -37,7 +37,7 @@ public class Simulation {
                 x = 0;
                 break;
             case aNichts:
-                s = "Nichts!";
+                s = "Leider keine Ausgabe!";
                 break;
         }
         return s;

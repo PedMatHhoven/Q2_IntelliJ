@@ -20,10 +20,10 @@ public class Controller {
     Automat.tZustand zustandNeu;
     int i = -1; //für Position des einzulesenden Zeichen
 
-    public String GibAus(Automat.tAusgabe ausgabe) {
+    public String GibAus(Automat.tAusgabe aus) {
         //Konvertierung - Automaten-Ausgabe zu String
         String s = "";
-        switch (ausgabe) {
+        switch (aus) {
             case  aGerade:
                 s = "gerade";
                 break;
