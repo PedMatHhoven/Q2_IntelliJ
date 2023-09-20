@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.Getraenkeautomat_ohneJavaFX;
+package _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.Getraenkeautomat_ohneJavaFX;
 
 import java.awt.*;
 import java.awt.event.*;

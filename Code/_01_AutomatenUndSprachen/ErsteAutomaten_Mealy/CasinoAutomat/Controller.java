@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.CasinoAutomat;
+package _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.CasinoAutomat;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade;
+package _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.DualzahlGeradeUngerade;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

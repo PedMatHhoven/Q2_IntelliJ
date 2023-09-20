@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.CasinoAutomat;
+package _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.CasinoAutomat;
 //Orignial von Eren erstellt - ein wenig angepasst!
 //gute JavaFX-Vorlage - speziell für Version mit parallelen Bändern!
 //- Definition aber nicht 1:1 wie vorgegeben im Unterricht!

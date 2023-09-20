@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.Akzeptoren.SOS;
+package _01_AutomatenUndSprachen.Akzeptoren_DEA.SOS;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

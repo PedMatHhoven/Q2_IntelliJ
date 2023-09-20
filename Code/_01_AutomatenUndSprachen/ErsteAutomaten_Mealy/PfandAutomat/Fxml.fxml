@@ -4,7 +4,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="278.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_01_AutomatenUndSprachen.ErsteAutomaten.PfandAutomat.Simulation">
+<AnchorPane prefHeight="278.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_01_AutomatenUndSprachen.ErsteAutomaten_Mealy.PfandAutomat.Simulation">
    <children>
       <Button fx:id="btAuszahlen" layoutX="37.0" layoutY="213.0" mnemonicParsing="false" onAction="#btAuszahlen_onClick" text="Auszahlen" />
       <Button fx:id="btEinweg" layoutX="36.0" layoutY="113.0" mnemonicParsing="false" onAction="#btEinweg_onClick" text="Einweg" />

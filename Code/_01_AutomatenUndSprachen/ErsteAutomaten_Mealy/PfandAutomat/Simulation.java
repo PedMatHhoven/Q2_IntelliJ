@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.PfandAutomat;
+package _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.PfandAutomat;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;

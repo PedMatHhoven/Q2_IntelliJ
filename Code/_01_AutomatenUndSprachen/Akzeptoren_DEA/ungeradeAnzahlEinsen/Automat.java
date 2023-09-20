@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.Akzeptoren.ungeradeAnzahlEinsen;
+package _01_AutomatenUndSprachen.Akzeptoren_DEA.ungeradeAnzahlEinsen;
 
 public class Automat{
   //Definition der Alphabete

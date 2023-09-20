@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.ErsteAutomaten.DualzahlGeradeUngerade;
+package _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.DualzahlGeradeUngerade;
 
 public class Automat {
   //Definitionen von Alphabeten und Zustandsmenge

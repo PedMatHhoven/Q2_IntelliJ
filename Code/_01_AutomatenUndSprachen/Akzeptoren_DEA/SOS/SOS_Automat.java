@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.Akzeptoren.SOS;
+package _01_AutomatenUndSprachen.Akzeptoren_DEA.SOS;
 
 public class SOS_Automat {
     public SOS_Automat(){

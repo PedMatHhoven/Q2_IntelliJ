@@ -6,7 +6,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="320.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_01_AutomatenUndSprachen.ErsteAutomaten.CasinoAutomat.Controller">
+<AnchorPane prefHeight="320.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_01_AutomatenUndSprachen.ErsteAutomaten_Mealy.CasinoAutomat.Controller">
    <children>
       <Button fx:id="btn_Abbruch" layoutX="398.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#start" text="Abbruch" />
       <Button fx:id="btn_Spielen" layoutX="329.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#start" text="Spielen" />

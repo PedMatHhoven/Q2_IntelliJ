@@ -1,4 +1,4 @@
-package _01_AutomatenUndSprachen.Akzeptoren.SOS;
+package _01_AutomatenUndSprachen.Akzeptoren_DEA.SOS;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

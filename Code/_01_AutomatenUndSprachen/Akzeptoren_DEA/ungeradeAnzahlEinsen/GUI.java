@@ -1,9 +1,8 @@
-package _01_AutomatenUndSprachen.Akzeptoren.ungeradeAnzahlEinsen;
+package _01_AutomatenUndSprachen.Akzeptoren_DEA.ungeradeAnzahlEinsen;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 public class GUI extends JFrame {
   // Anfang Attribute
