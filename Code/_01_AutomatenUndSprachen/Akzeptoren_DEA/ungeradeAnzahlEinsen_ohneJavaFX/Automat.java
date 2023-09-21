@@ -1,6 +1,6 @@
-package _01_AutomatenUndSprachen.Akzeptoren_DEA.ungeradeAnzahlEinsen;
+package _01_AutomatenUndSprachen.Akzeptoren_DEA.ungeradeAnzahlEinsen_ohneJavaFX;
 
-public class Automat{
+public class Automat {
   //Definition der Alphabete
   public enum tZustand{zGerade, zUngerade};
   public enum tEingabe{e0, e1};
@@ -10,37 +10,39 @@ public class Automat{
   public Automat(){
     zustand = tZustand.zGerade;
   }
-  
-  public void reset() {
-    zustand = tZustand.zGerade;
-  }
-  
+
   public tZustand getZustand(){
     return zustand;
   }
-  
-  public void uebergangsfunktion(tEingabe ein, tZustand zu){
+
+  public void setZustand(tZustand z) {
+    zustand = z;
+  }
+
+  public tZustand uebergangsfunktion(tEingabe ein, tZustand zu){
+    tZustand zus = null;
     switch (zu) {
       case zGerade: 
       switch(ein){
-        case e0: 
-        zustand = tZustand.zGerade;
+        case e0:
+        zus = tZustand.zGerade;
         break;
         case e1:
-        zustand = tZustand.zUngerade;
+        zus = tZustand.zUngerade;
         break;
       }
       break;
       case zUngerade: 
       switch (ein) {
         case  e0: 
-        zustand = tZustand.zUngerade;
+        zus = tZustand.zUngerade;
         break;
         case  e1: 
-        zustand = tZustand.zGerade;
+        zus = tZustand.zGerade;
         break;  
       } 
       break;
-    } 
+    }
+    return zus;
   }
 }

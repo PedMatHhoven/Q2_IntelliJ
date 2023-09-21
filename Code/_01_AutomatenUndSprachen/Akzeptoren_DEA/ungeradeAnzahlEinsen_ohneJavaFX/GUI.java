@@ -1,11 +1,10 @@
-package _01_AutomatenUndSprachen.Akzeptoren_DEA.ungeradeAnzahlEinsen;
+package _01_AutomatenUndSprachen.Akzeptoren_DEA.ungeradeAnzahlEinsen_ohneJavaFX;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class GUI extends JFrame {
-  // Anfang Attribute
   private TextField textField1 = new TextField();
   private Label label1 = new Label();
   private TextField textField2 = new TextField();
@@ -14,7 +13,7 @@ public class GUI extends JFrame {
   
   Automat automat = new Automat();
   Automat.tEingabe eingabe;
-  // Ende Attribute
+  Automat.tZustand zustandNeu;
   
   public GUI(String title) { 
     // Frame-Initialisierung
@@ -43,7 +42,7 @@ public class GUI extends JFrame {
     label2.setText("akzeptiert?");
     cp.add(label2);
     button1.setBounds(24, 48, 59, 25);
-    button1.setLabel("pr�fen");
+    button1.setLabel("prüfen");
     button1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         button1_ActionPerformed(evt);
@@ -54,36 +53,33 @@ public class GUI extends JFrame {
     // Ende Komponenten
     
     setVisible(true);
-  } // end of public GUI
-  
-  // Anfang Methoden
+  }
   
   public static void main(String[] args) {
     new GUI("GUI");
-    
-  } // end of main
-  
-  public void gibAntwort(Automat.tZustand zustand){
-    if(zustand == Automat.tZustand.zGerade){
-      textField2.setText("NEIN");
-    } else {
-      textField2.setText("JA");
-    } 
+  }
+
+  public Automat.tEingabe LiesEingabe(char zeichen) {
+      switch (zeichen) {
+          case '0':
+              eingabe = Automat.tEingabe.e0;
+              break;
+          case '1':
+              eingabe = Automat.tEingabe.e1;
+              break;
+      }
+      return eingabe;
   }
   
   public void button1_ActionPerformed(ActionEvent evt) {
-    automat.reset();
-    String eingabe = textField1.getText();
-    int len = eingabe.length();
-    System.out.println(len);
+    int len = textField1.getText().length();
     for (int i = 0; i < len; i++) {
-      if (eingabe.charAt(i) == '1') {
-        automat.uebergangsfunktion(Automat.tEingabe.e1, automat.getZustand());
-      } else {
-        automat.uebergangsfunktion(Automat.tEingabe.e0, automat.getZustand());
-      } 
-    } 
-    gibAntwort(automat.getZustand());
-  } 
-  // Ende Methoden
-} // end of class GUI
+      char c = textField1.getText().charAt(i);
+      eingabe = LiesEingabe(c);
+      zustandNeu = automat.uebergangsfunktion(eingabe, automat.getZustand());
+      automat.setZustand(zustandNeu);
+    }
+    if (zustandNeu == Automat.tZustand.zGerade) textField2.setText("NEIN"); else textField2.setText("JA");
+    automat.setZustand(Automat.tZustand.zGerade);
+  }
+}
