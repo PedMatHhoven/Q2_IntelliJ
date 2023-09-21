@@ -1,8 +1,8 @@
 package _01_AutomatenUndSprachen.Akzeptoren_DEA.SOS;
 
 public class SOS_Automat {
-    public enum tZustand {z0, z1, z2, z3, z4, z5, z6, z7, z8, z9}
     public enum tEingabe {kurz, lang}
+    public enum tZustand {z0, z1, z2, z3, z4, z5, z6, z7, z8, z9}
 
     private tZustand zustand;
 
