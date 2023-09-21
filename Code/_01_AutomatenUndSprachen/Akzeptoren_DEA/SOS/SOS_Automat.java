@@ -1,7 +1,5 @@
 package _01_AutomatenUndSprachen.Akzeptoren_DEA.SOS;
 
-import _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.DualzahlGeradeUngerade.Automat;
-
 public class SOS_Automat {
     public enum tZustand {z0, z1, z2, z3, z4, z5, z6, z7, z8, z9}
     public enum tEingabe {kurz, lang}
@@ -12,68 +10,75 @@ public class SOS_Automat {
         zustand = tZustand.z0;
     }
 
-    public tZustand uebergangsfunktion(tZustand pZustand, tEingabe pEingabe) {
-        zustand = pZustand;
-        switch (zustand){
+    public tZustand getZustand() {
+        return zustand;
+    }
+
+    public void setZustand(tZustand z) {
+        zustand = z;
+    }
+
+    public tZustand uebergangsfunktion(tEingabe pEingabe, tZustand pZustand) {
+        switch (pZustand) {
             case z0 -> {
                 if (pEingabe == tEingabe.kurz) {
-                    zustand = tZustand.z1;
+                    pZustand = tZustand.z1;
                 }
             }
             case z1 -> {
                 if (pEingabe == tEingabe.kurz) {
-                    zustand = tZustand.z2;
+                    pZustand = tZustand.z2;
                 }
-                else zustand = tZustand.z0;
+                else pZustand = tZustand.z0;
             }
             case z2 -> {
                 if (pEingabe == tEingabe.kurz) {
-                    zustand = tZustand.z3;
+                    pZustand = tZustand.z3;
                 }
-                else zustand = tZustand.z0;
+                else pZustand = tZustand.z0;
             }
             case z3 -> {
                 if (pEingabe == tEingabe.lang) {
-                    zustand = tZustand.z4;
+                    pZustand = tZustand.z4;
                 }
             }
             case z4 -> {
                 if (pEingabe == tEingabe.lang) {
-                    zustand = tZustand.z5;
+                    pZustand = tZustand.z5;
                 }
-                else zustand = tZustand.z1;
+                else pZustand = tZustand.z1;
             }
             case z5 -> {
                 if (pEingabe == tEingabe.lang) {
-                    zustand = tZustand.z6;
+                    pZustand = tZustand.z6;
                 }
-                else zustand = tZustand.z1;
+                else pZustand = tZustand.z1;
             }
             case z6 -> {
                 if (pEingabe == tEingabe.kurz) {
-                    zustand = tZustand.z7;
+                    pZustand = tZustand.z7;
                 }
-                else zustand = tZustand.z0;
+                else pZustand = tZustand.z0;
             }
             case z7 -> {
                 if (pEingabe == tEingabe.kurz) {
-                    zustand = tZustand.z8;
+                    pZustand = tZustand.z8;
                 }
-                else zustand = tZustand.z0;
+                else pZustand = tZustand.z0;
             }
             case z8 -> {
                 if (pEingabe == tEingabe.kurz) {
-                    zustand = tZustand.z9;
+                    pZustand = tZustand.z9;
                 }
-                else zustand = tZustand.z0;
+                else pZustand = tZustand.z0;
             }
             case z9 -> {
                 if (pEingabe == tEingabe.kurz) {
-                    zustand = tZustand.z3;
+                    pZustand = tZustand.z3;
                 }
-                else zustand = tZustand.z4;
+                else pZustand = tZustand.z4;
             }
         }
-        return zustand;
+        return pZustand;
     }
 }
