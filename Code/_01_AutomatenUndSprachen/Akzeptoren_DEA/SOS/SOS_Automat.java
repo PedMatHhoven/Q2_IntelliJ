@@ -6,7 +6,7 @@ public class SOS_Automat {
 
     private tZustand zustand;
 
-    public SOS_Automat(){
+    public SOS_Automat() {
         zustand = tZustand.z0;
     }
 

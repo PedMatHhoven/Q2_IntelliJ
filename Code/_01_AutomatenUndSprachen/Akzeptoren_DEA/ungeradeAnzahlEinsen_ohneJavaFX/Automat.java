@@ -7,11 +7,11 @@ public class Automat {
   
   private tZustand zustand;
   
-  public Automat(){
+  public Automat() {
     zustand = tZustand.zGerade;
   }
 
-  public tZustand getZustand(){
+  public tZustand getZustand() {
     return zustand;
   }
 
@@ -19,7 +19,7 @@ public class Automat {
     zustand = z;
   }
 
-  public tZustand uebergangsfunktion(tEingabe ein, tZustand zu){
+  public tZustand uebergangsfunktion(tEingabe ein, tZustand zu) {
     tZustand zus = null;
     switch (zu) {
       case zGerade: 
