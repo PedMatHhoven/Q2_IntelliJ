@@ -1,14 +1,16 @@
 package _01_AutomatenUndSprachen.Akzeptoren_DEA.SOS;
 
+import _01_AutomatenUndSprachen.ErsteAutomaten_Mealy.DualzahlGeradeUngerade.Automat;
+
 public class SOS_Automat {
-    public SOS_Automat(){
-
-    }
-
     public enum tZustand {z0, z1, z2, z3, z4, z5, z6, z7, z8, z9}
     public enum tEingabe {kurz, lang}
 
-    tZustand zustand = tZustand.z0;
+    private tZustand zustand;
+
+    public SOS_Automat(){
+        zustand = tZustand.z0;
+    }
 
     public tZustand uebergangsfunktion(tZustand pZustand, tEingabe pEingabe) {
         zustand = pZustand;

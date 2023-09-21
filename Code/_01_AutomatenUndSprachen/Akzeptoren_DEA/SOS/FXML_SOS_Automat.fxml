@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="141.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_02_DEA._02_SOS.Controller_SOS_Automat">
+<AnchorPane prefHeight="141.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_01_AutomatenUndSprachen.Akzeptoren_DEA.SOS.Controller_SOS_Automat">
    <children>
       <Label fx:id="lblEingabe" alignment="CENTER" layoutX="17.0" layoutY="14.0" prefHeight="27.0" prefWidth="477.0" text="Eingabe:">
          <font>
