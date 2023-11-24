@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="155.0" prefWidth="265.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="_01_AutomatenUndSprachen.Compiler_MinSort_korrigiert.Controller">
+   <children>
+      <Button fx:id="btAction" layoutX="109.0" layoutY="108.0" mnemonicParsing="false" onAction="#btAction_onClick" text="sort" />
+      <Label fx:id="lbEingabe" layoutX="25.0" layoutY="40.0" text="Eingabe" />
+      <Label fx:id="lbAusgabe" layoutX="25.0" layoutY="79.0" text="Ausgabe" />
+      <TextField fx:id="tfErsteZahl" layoutX="80.0" layoutY="36.0" prefHeight="25.0" prefWidth="29.0" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="36.0" />
+      <TextField fx:id="tfZweiteZahl" layoutX="119.0" layoutY="36.0" prefHeight="25.0" prefWidth="29.0" />
+      <TextField fx:id="tfDritteZahl" layoutX="161.0" layoutY="36.0" prefHeight="25.0" prefWidth="29.0" />
+      <Label fx:id="lbSortiert" layoutX="84.0" layoutY="79.0" prefHeight="17.0" prefWidth="158.0" text="sortiert: " />
+   </children>
+</AnchorPane>
