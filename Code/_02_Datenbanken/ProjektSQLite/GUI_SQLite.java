@@ -100,8 +100,8 @@ public class GUI_SQLite extends Frame {
   }
 
   public void btStart_ActionPerformed(ActionEvent evt) {
-    //Vorsicht! SQLite-Treiber muss im Projekt eingebunden sein!
-    //dazu unter Fenster-Konfiguration Java-Interpreter die jar-Datei unter Classpath-User laden!
+    //Vorsicht! SQLite-Treiber ("jdbc" - jar-Datei) muss im Projekt eingebunden sein!
+    //dazu unter "File-Project Structure-Modules-Dependencies" die jar-Datei hinzufügen!
     myDatabase = new DatabaseConnector("",0,"Code/_02_Datenbanken/ProjektSQLite/Bank.db3","","");
     //Fehlermeldungen ggf. auch testweise provozieren!
     if (myDatabase.getErrorMessage() != null) 
