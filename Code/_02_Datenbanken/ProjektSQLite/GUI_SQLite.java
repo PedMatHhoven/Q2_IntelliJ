@@ -1,4 +1,4 @@
-package _02_ProjektSQLite;
+package _02_Datenbanken.ProjektSQLite;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -102,7 +102,7 @@ public class GUI_SQLite extends Frame {
   public void btStart_ActionPerformed(ActionEvent evt) {
     //Vorsicht! SQLite-Treiber muss im Projekt eingebunden sein!
     //dazu unter Fenster-Konfiguration Java-Interpreter die jar-Datei unter Classpath-User laden!
-    myDatabase = new DatabaseConnector("",0,"Code/_02_ProjektSQLite/Bank.db3","","");
+    myDatabase = new DatabaseConnector("",0,"Code/_02_Datenbanken/ProjektSQLite/Bank.db3","","");
     //Fehlermeldungen ggf. auch testweise provozieren!
     if (myDatabase.getErrorMessage() != null) 
     jTextField1.setText("Fehler! " + myDatabase.getErrorMessage());

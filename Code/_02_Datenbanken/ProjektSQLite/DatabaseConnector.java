@@ -1,4 +1,4 @@
-package _02_ProjektSQLite;
+package _02_Datenbanken.ProjektSQLite;
 
 import java.sql.*;
 
