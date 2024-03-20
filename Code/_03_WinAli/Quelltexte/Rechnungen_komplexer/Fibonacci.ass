@@ -1,0 +1,50 @@
+ start 0 
+
+ ini n 
+
+ lda 0, '1'
+ sta 0, b
+ lda 0, '0'
+ sta 0, a
+ sta 0, x
+ sta 0, i
+
+ outi b 
+
+*For-Schleife mit der Bedingung i<n-1
+
+for lda 0, n
+ sub 0, '1'
+ sta 0, y
+ lda 0, i
+ cmp 0, y
+ bnl ende
+
+ lda 0, a *x = a + b 
+ add 0, b
+ sta 0, x
+ outi x
+
+ lda 0, b *a = b
+ sta 0, a *b = x
+ lda 0, x
+ sta 0, b
+
+ lda 0, i * i++
+ add 0, '1'
+ sta 0, i
+ 
+ b for
+ 
+ende eoj
+
+
+a ds f
+b ds f
+
+x ds f *tmp
+n ds f *Anzahl der Stellen der Fibonacci-Folge
+i ds f *Variable für for
+y ds f *Hilfsvariable für Bedingung von for 
+
+ end

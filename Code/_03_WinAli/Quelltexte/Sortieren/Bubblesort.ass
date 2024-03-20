@@ -1,0 +1,94 @@
+ start 0
+
+ ini l * letzter Index des Array (0..l)
+
+* Einlesen von l+1 Elementen
+* for i := 0 to l do feld[i] := x
+
+  lda 0,'-1'	
+  sta 0,i
+k lda 0,i
+  add 0,'1'
+  sta 0,i
+  cmp 0,l
+  bh h
+  ini x
+  lda 0,x
+  lda 1,i
+  mul 1,'2'
+  sta 0,feld(1)
+  b k
+
+* Sortieren
+* for i := 0 to l do
+
+h lda 0,'-1'
+  sta 0,i
+m lda 0,i
+  add 0,'1'
+  sta 0,i
+  cmp 0,l
+  bh p
+
+* for j := 0 to l-1 do
+
+  lda 0,'-1'
+  sta 0,j
+n lda 0,j
+  add 0,'1'
+  sta 0,j
+  cmp 0,l
+  bnl m 
+
+* x := feld[j]; y := feld[j+1]; 
+* if x > y then begin 
+* feld[j] := y; feld[j+1] := x 
+* end
+
+  lda 1,j
+  mul 1,'2'
+  lda 0,feld(1)
+  sta 0,x
+  lda 1,j
+  add 1,'1'
+  mul 1,'2'
+  lda 0,feld(1)
+  sta 0,y
+  cmp 0,x
+  bh n
+  lda 0,y
+  lda 1,j
+  mul 1,'2'
+  sta 0,feld(1)
+  lda 0,x
+  lda 1,j
+  add 1,'1'
+  mul 1,'2'
+  sta 0, feld(1)
+  b n
+
+* Ausgeben
+* for i := 0 to l do write(feld[i])
+
+p lda 0,'-1'
+  sta 0,i
+r lda 0,i
+  add 0,'1'
+  sta 0,i
+  cmp 0,l
+  bh q
+  lda 1,i
+  mul 1,'2'
+  outi feld(1)
+  b r
+
+q eoj 
+
+x ds f
+y ds f
+l ds f
+i ds f
+j ds f
+feld ds 10f
+
+ end

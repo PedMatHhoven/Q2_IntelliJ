@@ -1,0 +1,11 @@
+  start 0
+  ini a
+  ini b
+  lda 0,a
+  add 0,b
+  sta c
+  outi c
+  eoj
+a ds f
+b ds f
+c ds f

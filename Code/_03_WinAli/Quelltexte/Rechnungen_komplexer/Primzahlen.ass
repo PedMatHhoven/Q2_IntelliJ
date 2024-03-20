@@ -1,0 +1,59 @@
+ start 0
+
+ lda 0,'1'
+ lda 1,'4'
+init sta 0,arr(1)
+ add 1,'2'
+ cmp 1,m
+ bl init
+
+
+ lda 0,'0'
+ lda 1,'8'
+main sta 0,arr(1)
+ add 1,h
+ cmp 1,m
+ bl main
+
+
+ lda 0,'1'
+ lda 1,h
+ sta 0,arr(1)
+ lda 0,'0'
+incrp lda 1,p
+ add 1,'1'
+ sta 1,p
+ lda 1,p
+ mul 1,'2'
+ sta 1,h
+ cmp 0,arr(1)
+ bne main
+ mulr 1,1
+ cmp 1,m
+ bl incrp
+
+
+ lda 1,'0'
+ sta 1,p
+print lda 0,p
+ add 0,'1'
+ sta 0,p
+ add 1,'2'
+ mul 0,arr(1)
+
+ cmp 0,'0'
+ be print
+
+ sta 0,s
+ outi s
+
+ cmp 1,m
+ bl print
+
+
+p dc '2'
+arr ds 90f
+
+h dc '4'
+s dc '9'
+m dc '199'

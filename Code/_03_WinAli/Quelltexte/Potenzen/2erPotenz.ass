@@ -1,0 +1,22 @@
+	ini x
+	lda 0,'1'
+	sta 0,e
+	sta 0,p
+	lda 0,x
+	cmp 0,'0'
+	be M2
+M1	lda 0,p
+	mul 0,'2'
+	sta 0,p
+	lda 0,e
+	add 0,'1'
+	sta 0,e
+	cmp 0,x
+	bh M2
+	b M1
+M2	outi p
+	eoj
+x ds f
+e ds f
+p ds f	
+ 	

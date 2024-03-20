@@ -1,0 +1,36 @@
+		ini 	zahl
+		Lda	0, zahl
+		Sta	0, z		* z := zahl; 
+		Lda	0, '0'
+		Sta	0, erg		* erg := 0;
+
+MWhile		Lda	0, z
+		Cmp	0, '0'
+		BNH	MWhileEnd	* If z <= 0 Then Goto MWhileEnd;
+
+		Lda	0, z
+		Div	0, '10'
+		Mul	0, '10'
+		Sta	0, help	
+		Lda	0, z
+		Sub	0, help
+		Sta	0, help		* help := z mod 10;
+
+		Lda	0, erg
+		Add	0, help
+		Sta	0, erg		* erg := erg + help;
+	
+		Lda	0, z
+		Div	0, '10'
+		Sta	0, z		* z := z Div 10;
+
+		B	MWhile		* Goto MWhile;
+
+MWhileEnd	Outi	Erg		* Writeln (erg);
+
+		Eoj
+
+zahl		ds	f
+z		ds	f
+erg		ds	f
+help		ds	f

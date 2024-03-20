@@ -1,0 +1,33 @@
+ ini x
+ lda '0'
+ sta e
+ lda '1'
+ sta f
+ lda x
+m cmp '0'
+ be n
+ div '10'
+ mul '10'
+ sta z
+ lda x
+ sub z
+ sta y
+ lda y
+ mul f
+ add e
+ sta e
+ lda f
+ mul '2'
+ sta f
+ lda x
+ div '10'
+ sta x
+ b m
+n outi e
+ eoj
+e ds f
+f ds f
+x ds f
+y ds f
+z ds f
+  

@@ -1,0 +1,23 @@
+	ini b		+ read (b)
+	ini x		+ read (x)
+	lda 0,'1'
+	sta 0,e		+ e := 1
+	sta 0,p		+ p := 1
+	lda 0,x
+	cmp 0,'0'
+	be M2		+if x = 0 then goto M2
+M1	lda 0,p	
+	mul 0,b
+	sta 0,p		+ p := p * b
+	lda 0,e
+	add 0,'1'
+	sta 0,e		+ e := e + 1
+	cmp 0,x
+	bh M2		+ if e > x then goto M2
+	b M1		+ goto M1
+M2	outi p		+ write (p)
+	eoj
+b ds f
+x ds f
+e ds f
+p ds f	

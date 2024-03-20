@@ -1,0 +1,14 @@
+Begin	Ini	n
+
+	Lda	0, n
+	Cmp	0, '0'
+	Bnl	MEnd	+ if x>0 then goto MEnd
+	
+	Lda	0, n
+	Mul	0, '-1'
+	Sta	0, n	+ n:=-n
+
+MEnd	Outi	n
+End	Eoj
+
+n	ds	f	

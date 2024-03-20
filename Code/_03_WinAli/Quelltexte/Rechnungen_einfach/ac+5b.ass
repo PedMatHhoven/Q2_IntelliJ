@@ -1,0 +1,22 @@
+ start 0
+ ini a
+ ini b
+ ini c
+ lda 0,c
+ mul 0,a
+ sta 0,h1
+ lda 0,'5'
+ mul 0,b
+ sta 0,h2
+ lda 0,h1
+ add 0,h2
+ sta x
+ outi x
+ eoj
+a ds f
+b ds f
+c ds f
+x ds f
+h1 ds f
+h2 ds f
+ end

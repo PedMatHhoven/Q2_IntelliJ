@@ -1,0 +1,18 @@
+ start 0
+ ini a
+ lda 0,a
+ div 0,10
+ sta 0,b
+ mul 0,10
+ sta 0,c
+ lda 0,a
+ sub 0,c
+ add 0,b
+ sta 0,x
+ outi x
+ eoj
+a ds f
+b ds f
+c ds f
+x ds f
+ end

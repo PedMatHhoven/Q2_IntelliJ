@@ -1,0 +1,25 @@
+        start 0
+
+        la 4, weiter1
+        b uprog1
+
+weiter1 outi s
+        la 4, weiter2         
+        b uprog1 
+
+weiter2 outi s
+        eoj
+
+z1      ds f
+z2      ds f
+s       ds f
+
+uprog1  ini z1
+        ini z2
+        lda 0, z1
+        add 0, z2
+        sta 0, s
+        br 4
+
+
+        end

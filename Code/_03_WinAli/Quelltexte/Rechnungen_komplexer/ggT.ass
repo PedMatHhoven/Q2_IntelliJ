@@ -1,0 +1,29 @@
+
+ start 0
+ ini a    
+ ini b      
+
+max lda 0, a  	* while Start 
+ cmp 0, b   
+ bh agroesserb  * if a > b ...   
+ bl bgroessera  * if a < b ...    
+ be ende  	* if a = b ...
+
+bgroessera lda 0, b
+ sub 0, a
+ sta 0, b	* b = b - a
+ b max		* goto max
+
+agroesserb  lda 0, a
+ sub 0, b
+ sta 0, a	* a = a - b
+ b max		* goto max
+
+ende outi a
+
+ eoj 
+
+a ds f
+b ds f
+
+ end

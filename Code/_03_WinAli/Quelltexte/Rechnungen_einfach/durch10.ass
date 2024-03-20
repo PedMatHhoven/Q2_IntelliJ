@@ -1,0 +1,31 @@
+  start 0
+  lda 0,'1'
+  sta 0,summe
+
+  lda 0,'1'
+  sta 0,z
+
+m ini zahl
+  lda 0,summe
+  add 0,zahl
+  sta 0,summe
+  
+  lda 0,z
+  add 0,'1'
+  sta 0,z
+
+  lda 0,z 
+  cmp 0,'10'
+  bnh m
+  
+  lda 0,summe
+  div 0,'10'
+  sta 0,summe
+  
+  outi summe
+  eoj
+
+zahl ds f
+summe ds f
+z ds f
+

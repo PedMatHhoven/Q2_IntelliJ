@@ -1,0 +1,25 @@
+  start 0
+  
+  ini zahl
+  
+  lda 0,zahl
+  sta 0,zahl2
+  
+  lda 0,zahl
+  div 0,'2'
+  mul 0,'2'
+  sta 0,zahl
+
+  lda 0,zahl2
+  cmp 0,zahl
+  
+  bne m
+
+  outi '1'
+
+  b n
+m outi '0'
+n eoj
+
+zahl ds f
+zahl2 ds f

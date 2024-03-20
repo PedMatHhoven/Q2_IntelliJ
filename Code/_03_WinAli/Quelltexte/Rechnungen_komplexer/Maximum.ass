@@ -1,0 +1,14 @@
+ ini zahl1
+ ini zahl2
+ lda 0,zahl1
+ cmp 0,zahl2
+ BL 28
+ BE 28
+ BH 34
+ outi zahl2
+ eoj
+ outi zahl1
+ eoj
+zahl1 ds f
+zahl2 ds f
+ 

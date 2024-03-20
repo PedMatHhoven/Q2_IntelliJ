@@ -1,0 +1,12 @@
+ ini S
+ lda 0,S
+ sta 0,H
+ add 0,'1'
+ mul 0,H
+ div 0,'2'
+ sta 0,E
+ outi E
+ eoj
+S ds f
+H ds f
+E ds f

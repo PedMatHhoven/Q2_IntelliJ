@@ -1,0 +1,87 @@
+ start 0
+
+ ini a *Endpunkt
+ lda 0, '1'
+ sta 0, b
+ lda 0, '1'
+ sta 0, i
+
+while lda 0, i
+ cmp 0, a
+ bh ende
+
+ lda 0, '2'
+ sta 0, n
+
+for lda 0, i
+ sub 0, '1'
+ sta 0, x
+
+ lda 0, n
+ cmp 0, x
+ bnl if2
+ 
+ lda 0, i *Bedingung von if1
+ div 0, n
+ sta 0, x
+ 
+ lda 0, x
+ mul 0, n
+ sta 0, x
+
+ lda 0, i
+ sub 0, x
+ sta 0, x
+
+ lda 0, n *Erhöhung von n
+ add 0, '1'
+ sta 0, n
+
+ lda 0, x
+ cmp 0, '0'
+ bne for
+ 
+ *Anweisung von if1
+ lda 0, '0'
+ sta 0, b
+ lda 0, n
+ add 0, '1'
+ sta 0, n
+
+ b for
+
+if2 lda 0, b *Bedingungen von if2
+ cmp 0, '1'
+ bne else
+ lda 0, i
+ cmp 0, '1'
+ be else
+ *Anweisung von if2
+ outi i *Ausgabe der Primzahl
+
+ lda 0, i *i++
+ add 0, '1'
+ sta 0, i
+
+ b while  
+
+else lda 0, '1'
+ sta 0, b
+
+ lda 0, i *i++
+ add 0, '1'
+ sta 0, i
+
+ b while  
+ 
+ende eoj
+
+a ds f *Anfang der Prüfung
+b ds f *In diesem Fall wie Boolean
+
+i ds f *aktueller Primzahlkandidat
+n ds f *aktueller Teiler
+
+x ds f *Hilfsvariable für die Bedingungen
+
+ end

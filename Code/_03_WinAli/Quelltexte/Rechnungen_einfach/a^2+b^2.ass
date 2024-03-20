@@ -1,0 +1,23 @@
+ start 0
+
+ ini a
+ ini b
+
+ lda 0, a
+ mul 0, a
+ sta 0, a
+
+ lda 0, b
+ mul 0, b
+ sta 0, b
+
+ lda 0, a
+ add 0, b
+ sta 0, a
+
+ outi a
+
+ eoj
+a ds f
+b ds f
+ end

@@ -1,0 +1,20 @@
+	ini n
+	ini m
+	lda 0,'0'
+	sta 0,s		+ s:=0
+Marke1	lda 0,n
+	mul 0,n
+	add 0,s
+	sta 0,s		+ s:=s+n^2
+	lda 0,n
+	cmp 0,m
+	be  Marke2	+ if n=m then goto Marke2
+	lda 0,n
+	add 0,'1'
+	sta 0,n		+ n:=n+1
+	b   Marke1	+ goto Marke1
+Marke2	outi s
+	eoj
+n ds f
+m ds f
+s ds f

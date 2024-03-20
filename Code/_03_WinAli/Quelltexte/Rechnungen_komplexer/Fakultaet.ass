@@ -1,0 +1,14 @@
+	ini n
+	lda 0,n
+Marke	sta 0,m
+	lda 0,n
+        cmp 0,'2'
+        be Marka
+	sub 0,'1'
+	sta 0,n
+	mul 0,m
+	b Marke 
+Marka	outi m
+	eoj
+n ds f
+m ds f

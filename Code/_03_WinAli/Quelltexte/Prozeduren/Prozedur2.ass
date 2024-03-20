@@ -1,0 +1,25 @@
+   start 0
+   ini a
+   ini b
+   la 1,m1
+   b n
+m1 ini a
+   ini b
+   la 1,m2
+   b n
+m2 ini a 
+   ini b
+   la 1,m3
+   b n
+m3 eoj
+
+a ds f
+b ds f
+c ds f
+
+n  lda 0,a
+   add 0,b
+   sta 0,c
+   outi c
+   br 1
+

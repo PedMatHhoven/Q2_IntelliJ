@@ -1,0 +1,24 @@
+ ini a
+ ini b
+ lda 0,a
+ cmp 0,b
+ bh m
+ bal 1,addi
+ b n
+m bal 1,subtr
+n outi x
+ eoj
+
+addi lda 0,a
+ add 0,b
+ sta 0,x
+ br 1
+
+subtr lda 0,a
+ sub 0,b
+ sta 0,x
+ br 1
+
+a ds f
+b ds f
+x ds f

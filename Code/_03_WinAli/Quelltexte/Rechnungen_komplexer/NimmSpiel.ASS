@@ -1,0 +1,55 @@
+ start 0		* Das Spiel: Zwei Spieler (Person und Rechner) nehmen von einem Haufen mit b Steinen abwechselnd 1,2,...,d-1  oder d Steine weg. Wer den letzten Stein nimmt hat gewonnen. Die Person beginnt.
+ ini d			* zuerst legt man d fest, im Spiel dürfen dann  1,2,...,d-1  oder d Steine in einem Zug genommen werden
+ lda 0, d
+ add 0, '1'
+ sta 0, b
+ 
+ lda 0, b
+ mul 0, '5'
+ sta 0, b
+ outi b			*b ist hier die Anzahl an Steinen die es zu Beginn gibt (berechnet sich mit (d+1)*5, die Zahl ist so gewählt, dass der Rechner nach 5 Zügen immer einen Sieg erzwingen kann)
+loop ini a		*Rundenbeginn: Der Spieler gibt mit der Zahl a an wie viele Steine er im ersten Zug nimmt
+
+ lda 0, a
+ div 0, d
+ sta 0, c
+
+ lda 0, c
+ mul 0, d
+ sta 0, c
+
+ lda 0, a
+ sub 0, c
+ sta 0, a		* sollte der Spieler eine ungültige Zahl a ausgewählt haben, also nicht 1,...,d dann wird statt der Zahl a, der Rest von a beim Teilen durch d als Zahl genommen
+ cmp 0, '0'
+ BNE skip
+ lda 0, d		
+ sta 0, a
+skip lda 0, b		* falls a den Rest 0 beim Teilen durch d hat, so wird anstatt der Zahl a die Zahl d genommen
+ sub 0, a
+ sta 0, b		
+
+ outi b			*Es wird die Zahl der Steine ausgegeben die nach dem Zug des Spielers noch übrig ist
+			*Jetzt ist der Rechner am Zug
+ lda 0, d
+ add 0, '1'
+ sta 0, c
+
+ lda 0, c
+ sub 0, a
+ sta a			* der Rechner nimmt immer (d+1)-a Steine vom Haufen
+
+ lda 0, b
+ sub 0, a
+ sta 0, b		
+
+ outi b			*Es wird die Zahl der Steine ausgegeben die nach dem Zug des Rechners noch übrig ist
+
+ cmp 0, '0'
+ BNE loop		*Sollten keine Steine mehr übrig sein ist das Spiel vorbei (der Rechner hat gewonnen), wenn noch Steine übrig sind, beginnt die nächste Runde
+ eoj
+a ds f
+b ds f
+c ds f
+d ds f
+ end

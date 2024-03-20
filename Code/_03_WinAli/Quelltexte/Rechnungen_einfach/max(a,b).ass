@@ -1,0 +1,19 @@
+ start 0
+ 
+ ini a
+ ini b
+
+ lda 0,a
+ cmp 0,b
+ bh  ABA    * if a > b
+	    * goto ABA
+ outi b
+ b END
+
+ABA outi a
+
+END eoj
+
+a ds f
+b ds f
+ end	
